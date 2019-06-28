@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Lato&display=swap");
+:root {
+  --main-color: black;
+  --accent-color: green;
+  font-family: "Lato", sans-serif;
+}
+body {
+  max-width: 980px;
+  margin: auto;
+}
+header,
+main,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+nav {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+header .menu {
+  font-family: "Abril Fatface", cursive;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  flex: 1;
+}
+header .menu li {
+  list-style-type: none;
+}
+header .menu li a {
+  text-decoration: none;
+  color: var(--main-color);
+  border: 1px solid white;
+  padding: 2px;
+}
+header .menu li a:hover {
+  border: 1px solid var(--accent-color);
+}
+header .logo img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+@media (min-width: 600px) {
+  header {
+    display: flex;
+    align-items: center;
+  }
+}
+.description-school .description-school-banner {
+  background-image: url(../img/main-photo.jpg);
+  min-height: 400px;
+  background-position: center;
+  background-size: cover;
+
+}
+@media (min-width: 600px){
+    .description-school .description-school-banner{
+        min-height: 654px;
+    }
+}
+.description-school .description-school-banner h1 {
+  padding-top: 15px;
+  font-family: "Abril Fatface", cursive;
+  font-size: 40px;
+  color: #1e1e1e;
+  display: flex;
+  justify-content: flex-end;
+}
+.description-school img{
+    width: 100%;
+    display: block;
+}
