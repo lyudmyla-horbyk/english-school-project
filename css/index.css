@@ -2,11 +2,13 @@
 :root {
   --main-color: black;
   --accent-color: green;
-  font-family: "Lato", sans-serif;
+  --container-mobile: 0 10px 0 10px;
 }
+
 body {
   max-width: 980px;
   margin: auto;
+  font-family: "Lato", sans-serif;
 }
 header,
 main,
@@ -21,6 +23,12 @@ nav {
   margin: 0;
   padding: 0;
   width: 100%;
+}
+h2 {
+  font-family: "Abril Fatface", cursive;
+  font-size: 26px;
+  text-align: center;
+  margin-top: 10px;
 }
 header .menu {
   font-family: "Abril Fatface", cursive;
@@ -61,6 +69,7 @@ header .logo img {
   background-size: cover;
   display: flex;
   flex-direction: column;
+  margin-top: 25px;
 }
 @media (min-width: 600px) {
   .description-school .description-school-banner {
@@ -74,11 +83,17 @@ header .logo img {
   color: #1e1e1e;
   text-align: right;
 }
+
 @media (min-width: 640px) {
   .description-school-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    padding-top: 20px;
   }
+}
+.description-school-info {
+  margin: var(--container-mobile);
 }
 
 .description-school .description-school-info img {
@@ -88,6 +103,7 @@ header .logo img {
 .description-school .description-school-info p {
   font-size: 18px;
   align-self: center;
+  line-height: 28px;
 }
 .sign-up-button {
   display: inline-block;
@@ -103,13 +119,341 @@ header .logo img {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .sign-up-button:hover {
-  background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
-   animation:slidebg 5s linear infinite;
+  background-image: linear-gradient(
+    90deg,
+    #00c0ff 0%,
+    #ffcf00 49%,
+    #fc4f4f 80%,
+    #00c0ff 100%
+  );
+  animation: slidebg 5s linear infinite;
   cursor: pointer;
 }
 
 @keyframes slidebg {
   to {
-    background-position:20vw;
+    background-position: 20vw;
+  }
+}
+.method {
+  display: flex;
+}
+.method .method-example {
+  flex-basis: 50%;
+  align-items: center;
+}
+.method .method-photo {
+  flex-basis: 50%;
+  align-items: center;
+}
+@media (max-width: 770px) {
+  .method {
+    flex-wrap: wrap;
+  }
+  .method .method-example {
+    flex-basis: 100%;
+  }
+  .method .method-photo {
+    flex-basis: 100%;
+  }
+}
+.method img {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.method ul {
+  padding: 0;
+  line-height: 40px;
+  margin: var(--container-mobile);
+}
+@media (min-width: 600px) {
+  .method ul {
+    margin: 0;
+  }
+}
+
+.method ul li {
+  list-style: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+.method-learning a {
+  text-decoration: none;
+  color: var(--main-color);
+  border: 1px solid white;
+}
+.method-learning li a:hover {
+  color: green;
+  transition: 600ms;
+}
+.method li i {
+  padding-right: 30px;
+  font-size: 31px;
+}
+
+.method-learning-video {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 326px;
+}
+.method-learning-video iframe {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 600px) {
+  .method-learning-video {
+    width: 575px;
+    height: 326px;
+  }
+}
+
+@media (min-width: 600px) {
+  .method-learning .method {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 10px 20px 10px;
+  }
+}
+.feedback {
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.feedback blockquote {
+  margin: 30px 0;
+}
+.feedback-prev-arrow,
+.feedback-next-arrow {
+  position: absolute;
+  width: 40px;
+  height: 44px;
+  background-color: #e6e6e6;
+  border: none;
+  font-size: 32px;
+  line-height: 44px;
+  padding: 0;
+  color: #aaaaaa;
+  top: 50%;
+  margin-top: -22px;
+  z-index: 1000;
+}
+
+.feedback-prev-arrow,
+.feedback-next-arrow:focus {
+  outline: none;
+}
+
+.feedback-next-arrow {
+  right: 0;
+}
+.feedback-prev-arrow {
+  left: 0;
+}
+
+.map {
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+  height: 322px;
+}
+.map iframe {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 800px) {
+  .map {
+    height: 550px;
+  }
+}
+footer p {
+  text-align: center;
+  margin-bottom: 25px;
+}
+footer ul {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  justify-content: space-evenly;
+}
+
+@media (min-width: 600px) {
+  footer ul {
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 600px) {
+  .fa-facebook-square,
+  .fa-twitter {
+    padding-right: 40px;
+  }
+}
+footer ul li {
+  list-style: none;
+}
+footer li a i {
+  font-size: 31px;
+}
+footer .fa-facebook-square {
+  color: #3b5998;
+}
+footer .fa-twitter {
+  color: #38a1f3;
+}
+footer .fa-instagram {
+  color: #e1306c;
+}
+
+.lesson-video {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 324px;
+  margin-top: 25px;
+}
+.lesson-video iframe {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 780px) {
+  .lesson-video {
+    height: 552px;
+  }
+}
+.lessons-examples {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.lessons-description h2 {
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+.lesson p {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.lesson-link {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.lesson-link-photo {
+  flex-basis: 50%;
+}
+.lesson-link-photo img {
+  width: 100%;
+  display: block;
+}
+.lesson-link-unit {
+  flex-basis: 50%;
+  align-items: center;
+  display: flex;
+  margin-left: 20px;
+}
+.lesson-link-unit a {
+  color: #006ce5;
+  font-family: "Abril Fatface", cursive;
+  font-size: 17px;
+}
+.lesson .download-course {
+  text-align: center;
+}
+.lesson .download-course a {
+  display: inline-block;
+  padding: 0.8em 3.2em;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  font-weight: 700;
+  color: #000000;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 auto;
+  text-decoration: none;
+}
+.lesson .download-course:focus {
+  outline: none;
+}
+@media (min-width: 700px) {
+  .lesson .download-course {
+    text-align: left;
+  }
+}
+.lessons-video {
+  margin-top: 25px;
+}
+.lessons-video video {
+  width: 100%;
+  height: auto;
+}
+.contactus-form {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.contactus-form h2 {
+  margin-bottom: 20px;
+}
+.contactus-form {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+.contactus-form-input {
+  height: 35px;
+  display: block;
+  border: 1px solid black;
+  color: black;
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 18px;
+  line-height: 35px;
+  padding-left: 8px;
+  padding-right: 8px;
+  box-sizing: border-box;
+}
+.contactus-form-input:focus {
+  outline: none;
+}
+.contactus-form-button {
+  height: 40px;
+  display: block;
+  border: 1px solid black;
+  font-size: 18px;
+  width: 221px;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.contactus-form-textarea {
+  height: 192px;
+}
+
+.contractus-form-section {
+  display: flex;
+}
+.contactus-form-img{
+  display: none;
+}
+.contractus-form-section .contactus-form-img img{
+  width: 100%;
+  height: auto;
+}
+@media(min-width:700px){
+  .contractus-form-section .contactus-form-img{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+}
+@media(min-width:700px){
+  .contactus-form {
+    flex-basis: 50%;
   }
 }
